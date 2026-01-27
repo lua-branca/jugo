@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0米（ゼロマイ）チラシデザイン案</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F5F2E9;
+            /* 生成り */
+            --accent-color: #E60012;
+            /* 赤 */
+            --gold-color: #D4AF37;
+            /* 金 */
+            --text-color: #333333;
+            /* 黒 */
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            background-color: #e0e0e0;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .a4-paper {
+            width: 210mm;
+            height: 297mm;
+            background-color: var(--bg-color);
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            background: #333;
+            color: #fff;
+            padding: 5px 15px;
+            font-size: 14px;
+        }
+
+        /* FRONT SIDE */
+        .front-layout {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 50px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+        }
+
+        .main-copy-container {
+            margin-top: 60px;
+        }
+
+        .main-copy {
+            font-family: 'Shippori Mincho', serif;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 1.4;
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+
+        .sub-copy {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 24px;
+            margin-top: 20px;
+            color: var(--text-color);
+        }
+
+        .visual-area {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Placeholder for Visual */
+        .mock-visual {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #fff, #ddd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Shippori Mincho', serif;
+            font-size: 80px;
+            color: var(--accent-color);
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .mock-visual::after {
+            content: "米";
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lead-copy {
+            text-align: left;
+            border-top: 2px solid var(--accent-color);
+            padding-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .lead-head {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .lead-text {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* BACK SIDE */
+        .back-layout {
+            height: 100%;
+            padding: 30px 40px;
+            /* Reduced padding */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .back-header {
+            text-align: center;
+            margin-bottom: 20px;
+            /* Reduced from 40px */
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .back-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 28px;
+            /* Slightly smaller */
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .three-points {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            /* Reduced from 50px */
+        }
+
+        .point-box {
+            width: 31%;
+            text-align: center;
+            background: #fff;
+            padding: 15px 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        .point-icon {
+            font-size: 32px;
+            /* Smaller icon */
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .point-title {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--accent-color);
+        }
+
+        .point-desc {
+            font-size: 12px;
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        .specs-area {
+            background: #fff;
+            padding: 20px;
+            /* Reduced from 30px */
+            border-radius: 8px;
+            margin-bottom: 20px;
+            /* Reduced from 40px */
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            padding: 8px;
+            /* Reduced from 12px */
+            border-bottom: 1px solid #eee;
+            text-align: left;
+            font-size: 13px;
+            /* Smaller text */
+        }
+
+        .specs-table th {
+            width: 30%;
+            color: var(--accent-color);
+        }
+
+        .cta-area {
+            background: var(--text-color);
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            /* Changed from auto to fixed margin */
+        }
+
+        .cta-text h3 {
+            margin: 0 0 5px 0;
+            font-family: 'Shippori Mincho', serif;
+            font-size: 20px;
+        }
+
+        .cta-text p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .qr-placeholder {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FRONT SIDE -->
+    <div class="a4-paper">
+        <div class="label">表面案：インパクト</div>
+        <div class="front-layout">
+            <div class="main-copy-container">
+                <div
+                    style="font-family: 'Shippori Mincho', serif; font-size: 60px; color: var(--accent-color); font-weight: bold; margin-bottom: 20px; text-shadow: 2px 2px 0 #fff;">
+                    0米<span style="font-size: 30px; margin-left: 10px;">(ゼロマイ)</span></div>
+                <h1 class="main-copy" style="font-size: 36px;">火ゼロ／水ゼロ／電気ゼロ／時間ゼロ</h1>
+                <p class="sub-copy" style="font-weight: bold; font-size: 28px;">開けてすぐに食べられます</p>
+            </div>
+
+            <div class="visual-area">
+                <div class="mock-visual"></div>
+                <!-- イメージ：ふっくらとした美味しそうなご飯と商品 -->
+            </div>
+
+            <div class="lead-copy">
+                <div class="lead-head">最強の防災食だから、日常でも使いやすい。</div>
+                <div class="lead-text">
+                    他のどんな防災食よりも「手軽」で「美味しい」。<br>
+                    水も火もいらない「0米」は、災害時という極限の状況で<br>
+                    これ以上ないほど手軽に、ふっくらとしたご飯が食べられます。<br>
+                    <strong>その圧倒的なスペックがあるからこそ、忙しい日常の食事や<br>
+                        アウトドアなど、普段使いでも最高のパフォーマンスを発揮します。</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BACK SIDE -->
+    <div class="a4-paper">
+        <div class="label">裏面案：詳細とアクション</div>
+        <div class="back-layout">
+            <div class="back-header">
+                <h2 class="back-title">4つの「ゼロ」が作る安心</h2>
+            </div>
+
+            <div class="three-points">
+                <div class="point-box" style="width: 23%;">
+                    <span class="point-icon">🔥</span>
+                    <div class="point-title">火ゼロ</div>
+                    <div class="point-desc">ガスが止まっても大丈夫。</div>
+                </div>
+                <div class="point-box" style="width: 23%;">
+                    <span class="point-icon">💧</span>
+                    <div class="point-title">水ゼロ</div>
+                    <div class="point-desc">貴重な水を調理に使いません。</div>
+                </div>
+                <div class="point-box" style="width: 23%;">
+                    <span class="point-icon">⚡</span>
+                    <div class="point-title">電気ゼロ</div>
+                    <div class="point-desc">温め不要。<br>停電時でも安心。</div>
+                </div>
+                <div class="point-box" style="width: 23%;">
+                    <span class="point-icon">⏱️</span>
+                    <div class="point-title">時間ゼロ</div>
+                    <div class="point-desc">待ち時間なし。<br>開けるだけ。</div>
+                </div>
+            </div>
+
+            <!-- Target Audience -->
+            <div class="specs-area"
+                style="padding: 15px; margin-bottom: 15px; background: #fff0f0; border: 1px solid var(--accent-color);">
+                <h3
+                    style="font-family: 'Shippori Mincho', serif; color: var(--accent-color); margin: 0 0 5px 0; font-size: 16px;">
+                    こんな方におすすめ</h3>
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.6;">
+                    <li><strong>ご家庭の備えに</strong>：お子様や高齢者のいるご家庭でも、すぐに配れて安心。</li>
+                    <li><strong>忙しい毎日に</strong>：体調不良や買い物に行けない日の「保険」として。</li>
+                    <li><strong>離れたご家族へ</strong>：「食べてね」と送れる、日常使いできる贈り物。</li>
+                </ul>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="comparison-area" style="margin-bottom: 20px;">
+                <h3
+                    style="font-family: 'Shippori Mincho', serif; color: var(--accent-color); border-left: 4px solid var(--accent-color); padding-left: 10px; margin-bottom: 10px; font-size: 18px;">
+                    防災性能だけでなく「家族の安心」で選ぶ</h3>
+                <table class="specs-table" style="font-size: 13px;">
+                    <tr style="background: #eee;">
+                        <th style="width: 20%;">製品タイプ</th>
+                        <th style="width: 15%; text-align: center;">水・お湯</th>
+                        <th style="width: 15%; text-align: center;">火・電気</th>
+                        <th style="width: 25%; text-align: center;">時間</th>
+                        <th style="width: 25%; text-align: center; color: var(--accent-color);">アレルギー</th>
+                    </tr>
+                    <tr style="background: #fff0f0; border: 2px solid var(--accent-color);">
+                        <td style="font-weight: bold; color: var(--accent-color);">0米</td>
+                        <td style="text-align: center; font-weight: bold;">不要</td>
+                        <td style="text-align: center; font-weight: bold;">不要</td>
+                        <td style="text-align: center; font-weight: bold; color: var(--accent-color);">開けてすぐ</td>
+                        <td style="text-align: center; font-weight: bold; color: var(--accent-color);">ゼロ<br><span
+                                style="font-size:10px">(28品目不使用)</span></td>
+                    </tr>
+                    <tr>
+                        <td>乾パン</td>
+                        <td style="text-align: center;">不要</td>
+                        <td style="text-align: center;">不要</td>
+                        <td style="text-align: center;">すぐ</td>
+                        <td style="text-align: center;">あり(小麦)</td>
+                    </tr>
+                    <tr>
+                        <td>アルファ米</td>
+                        <td style="text-align: center;">必要</td>
+                        <td style="text-align: center;">お湯なら要</td>
+                        <td style="text-align: center;">15分〜</td>
+                        <td style="text-align: center;">製品による</td>
+                    </tr>
+                    <tr>
+                        <td>レトルトご飯</td>
+                        <td style="text-align: center;">不要</td>
+                        <td style="text-align: center;">必要</td>
+                        <td style="text-align: center;">15分〜</td>
+                        <td style="text-align: center;">なし</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="specs-area">
+                <h3
+                    style="font-family: 'Shippori Mincho', serif; color: var(--text-color); border-left: 4px solid #666; padding-left: 10px; margin-bottom: 10px; font-size: 18px;">
+                    製品基本スペック</h3>
+                <table class="specs-table">
+                    <tr>
+                        <th style="width: 20%;">商品名</th>
+                        <td>0米（ゼロマイ）</td>
+                    </tr>
+                    <tr>
+                        <th>原材料</th>
+                        <td>ひとめぼれ（国産）、他（28品目不使用）</td>
+                    </tr>
+                    <tr>
+                        <th>賞味期限</th>
+                        <td>製造から3年（常温保存可能）</td>
+                    </tr>
+                    <tr>
+                        <th>価格</th>
+                        <td>700円（税抜）</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cta-area">
+                <div class="cta-text">
+                    <h3>まずは最新情報をチェック</h3>
+                    <p>開発の裏側やアレンジレシピを配信中。<br>Instagram: <strong>@0mai_official</strong></p>
+                </div>
+                <div class="qr-placeholder">
+                    QR
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

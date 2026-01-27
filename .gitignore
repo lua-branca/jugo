@@ -1,0 +1,7 @@
+# Sensitive / Internal Files
+00_Context.md
+20_Manus_Briefs/
+99_Resources/
+
+# System Files
+.DS_Store
