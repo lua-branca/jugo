@@ -5,9 +5,8 @@
 !.gitignore
 
 # Allow Design/Code directories
-!30_Design/
-!30_Design/LP_Mockup/
-!30_Design/LP_Mockup/**
+!LP_Mockup/
+!LP_Mockup/**
 
 # Allow future web directories (example)
 # !40_Web/
