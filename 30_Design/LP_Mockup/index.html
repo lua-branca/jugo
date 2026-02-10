@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0米 (Zero-mai) - 0秒ごはん</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Zen Kaku Gothic New"', 'sans-serif'],
+                        serif: ['"Shippori Mincho"', 'serif'],
+                    },
+                    colors: {
+                        'rice-white': '#FDFBF7',
+                        'rice-beige': '#E8E4D9',
+                        'sumi-black': '#1A1A1A',
+                        'accent-red': '#BC002D', // Japan Red
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Zen Kaku Gothic New", sans-serif;
+            background-color: #FDFBF7;
+            color: #1A1A1A;
+        }
+
+        .font-serif {
+            font-family: "Shippori Mincho", serif;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-gray-900 text-white">
+        <!-- Video Placeholder -->
+        <div class="absolute inset-0 z-0 bg-black opacity-60">
+            <!-- Actual video tag will go here -->
+            <img src="https://placehold.co/1920x1080/333/666?text=Video+Background" alt="Background"
+                class="w-full h-full object-cover opacity-50">
+        </div>
+
+        <div class="relative z-10 text-center px-4">
+            <p class="mb-4 text-sm tracking-[0.2em] font-medium text-gray-300">備蓄米の常識を変える</p>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
+                0秒ごはん、<br class="md:hidden">はじまる。
+            </h1>
+            <p class="text-lg md:text-2xl mb-12 font-light">
+                水も、火も、器もいらない。<br>
+                究極のミニマリズム。
+            </p>
+            <a href="#contest"
+                class="inline-block bg-white text-black px-8 py-3 rounded-full font-bold tracking-widest hover:bg-gray-200 transition duration-300 transform hover:scale-105">
+                詳細を見る
+            </a>
+        </div>
+    </header>
+
+    <!-- Concept Section -->
+    <section class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-16">
+                <span class="block text-sm text-gray-500 mb-2 font-sans tracking-widest">CONCEPT</span>
+                「0」の約束
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- 0 Preparation -->
+                <div class="p-6">
+                    <div class="text-6xl font-serif font-bold mb-4 text-gray-200">01</div>
+                    <h3 class="text-xl font-bold mb-4">Preparation<br><span
+                            class="text-sm font-normal text-gray-500">準備ゼロ</span></h3>
+                    <p class="text-sm leading-relaxed text-gray-600">
+                        水も、電気も、ガスもいらない。<br>
+                        プルトップを開けるだけ。<br>
+                        災害時でも、大自然の中でも。
+                    </p>
+                </div>
+                <!-- 0 Waiting -->
+                <div class="p-6">
+                    <div class="text-6xl font-serif font-bold mb-4 text-gray-200">02</div>
+                    <h3 class="text-xl font-bold mb-4">Waiting<br><span
+                            class="text-sm font-normal text-gray-500">待ち時間ゼロ</span></h3>
+                    <p class="text-sm leading-relaxed text-gray-600">
+                        お湯を入れて15分待つ必要はありません。<br>
+                        開けた瞬間、<br>
+                        ふっくらしたご飯がそこにあります。
+                    </p>
+                </div>
+                <!-- 0 Guilt -->
+                <div class="p-6">
+                    <div class="text-6xl font-serif font-bold mb-4 text-gray-200">03</div>
+                    <h3 class="text-xl font-bold mb-4">Guilt<br><span
+                            class="text-sm font-normal text-gray-500">罪悪感ゼロ</span></h3>
+                    <p class="text-sm leading-relaxed text-gray-600">
+                        非常食だから我慢する、ではありません。<br>
+                        農家が本気で作った美味しいお米。<br>
+                        添加物も保存料もゼロ。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-rice-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-16 text-center">
+                <span class="block text-sm text-gray-500 mb-2 font-sans tracking-widest">WHY ZERO-MAI?</span>
+                備蓄米の常識を変える
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <!-- Can Benefits -->
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="bg-sumi-black text-white px-3 py-1 text-sm mr-3 font-serif">機能</span>
+                        長期保存と携帯性
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        光と空気を遮断する「缶」だからこそ実現できた、圧倒的な鮮度維持。<br>
+                        防災リュックに入れても潰れない頑丈さ。<br>
+                        日常のスキマに、もしもの備えを。
+                    </p>
+                    <ul class="text-sm text-gray-500 list-disc list-inside">
+                        <li>賞味期限 X年（長期保存）</li>
+                        <li>完全密封で虫やカビをシャットアウト</li>
+                        <li>積み重ねて収納可能</li>
+                    </ul>
+                </div>
+                <!-- Taste -->
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="bg-accent-red text-white px-3 py-1 text-sm mr-3 font-serif">味</span>
+                        新潟県産コシヒカリ 100%
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        「非常食＝美味しくない」は過去の話。<br>
+                        米どころ新潟県関川村の農家が育てた一等米を、独自製法でふっくらと炊き上げました。<br>
+                        噛むほどに広がる、お米本来の甘み。
+                    </p>
+                    <ul class="text-sm text-gray-500 list-disc list-inside">
+                        <li>食品添加物不使用</li>
+                        <li>生産者の顔が見える安心感</li>
+                        <li>冷めても美味しい品種選定</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-12">
+                <span class="block text-sm text-gray-500 mb-2 font-sans tracking-widest">SCENE</span>
+                こんな時に、0秒ごはん。
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Scene 1 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-lg mb-4 aspect-video">
+                        <img src="https://placehold.co/600x400/222/fff?text=Disaster" alt="Emergency"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-serif">もしもの時に</h3>
+                    <p class="text-sm text-gray-500">停電・断水時でも、いつもの食卓を。</p>
+                </div>
+                <!-- Scene 2 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-lg mb-4 aspect-video">
+                        <img src="https://placehold.co/600x400/444/fff?text=Outdoor" alt="Outdoor"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-serif">大自然の中で</h3>
+                    <p class="text-sm text-gray-500">登山やキャンプ飯に、究極のミニマルを。</p>
+                </div>
+                <!-- Scene 3 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-lg mb-4 aspect-video">
+                        <img src="https://placehold.co/600x400/666/fff?text=Gift" alt="Gift"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-serif">大切な人へ</h3>
+                    <p class="text-sm text-gray-500">「安心」と「美味しい」を贈るギフト。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lineup Section -->
+    <section class="py-20 bg-rice-beige">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-12">
+                <span class="block text-sm text-gray-500 mb-2 font-sans tracking-widest">PRODUCT</span>
+                商品ラインナップ
+            </h2>
+
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white p-6 rounded shadow-sm max-w-sm w-full">
+                    <div class="h-48 bg-gray-100 rounded mb-4 flex items-center justify-center text-gray-400">
+                        [商品画像: 0米 Standard]
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">0米 STANDARD</h3>
+                    <p class="text-sm text-gray-600 mb-4">新潟県関川村産コシヒカリ 200g</p>
+                    <p class="font-bold text-lg">¥500 <span class="text-xs font-normal text-gray-500">(予価/税抜)</span></p>
+                </div>
+                <!-- Product 2 -->
+                <div class="bg-white p-6 rounded shadow-sm max-w-sm w-full">
+                    <div class="h-48 bg-gray-100 rounded mb-4 flex items-center justify-center text-gray-400">
+                        [商品画像: ギフトボックス]
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">0米 GIFT BOX</h3>
+                    <p class="text-sm text-gray-600 mb-4">3缶セット / オリジナル化粧箱入り</p>
+                    <p class="font-bold text-lg">¥1,800 <span class="text-xs font-normal text-gray-500">(予価/税抜)</span>
+                    </p>
+                </div>
+            </div>
+            <p class="mt-8 text-xs text-gray-500">※価格・仕様は変更になる場合があります。2026年5月発売予定。</p>
+        </div>
+    </section>
+
+    <!-- Contest Section -->
+    <section id="contest" class="py-24 bg-gray-900 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6">
+                あなたのイラストが、<br>誰かの「糧」になる。
+            </h2>
+            <p class="text-lg mb-10 text-gray-300">
+                0米 ラベルデザインコンテスト開催決定。<br>
+                プロ・アマ問わず、あなたの「0」を表現してください。
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#"
+                    class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition duration-300">
+                    コンテスト詳細
+                </a>
+                <a href="https://twitter.com/jugo_japan"
+                    class="border border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-black transition duration-300">
+                    公式Xで見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sumi-black text-white py-12 text-center text-xs text-gray-400">
+        <p class="mb-4">Produced by JUGO</p>
+        <p>&copy; 2026 General Incorporated Association Jugo.</p>
+    </footer>
+
+</body>
+
+</html>

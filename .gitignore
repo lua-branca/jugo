@@ -1,7 +1,13 @@
-# Sensitive / Internal Files
-00_Context.md
-20_Manus_Briefs/
-99_Resources/
+# Ignore everything by default
+*
 
-# System Files
-.DS_Store
+# Allow git system files
+!.gitignore
+
+# Allow Design/Code directories
+!30_Design/
+!30_Design/LP_Mockup/
+!30_Design/LP_Mockup/**
+
+# Allow future web directories (example)
+# !40_Web/
