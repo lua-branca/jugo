@@ -9,4 +9,9 @@
 !LP_Mockup/**
 
 # Allow future web directories (example)
+<<<<<<< HEAD
 # !40_Web/
+=======
+!40_Web/
+!40_Web/**
+>>>>>>> 0fe03d7 (Initial commit: Jugo Corporate Site Renewal V20 Implementation)
