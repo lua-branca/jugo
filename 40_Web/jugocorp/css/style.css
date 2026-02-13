@@ -50,6 +50,21 @@ ul {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
+    /* PC Default */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+        /* Tablet: More breathing room */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 5vw;
+        /* Mobile: 5% relative margin */
+    }
 }
 
 .text-center {
@@ -61,7 +76,15 @@ ul {
 }
 
 .section {
-    padding: 80px 0;
+    padding: 100px 0;
+    /* PC: More space */
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+        /* Mobile: Tighter vertical usage */
+    }
 }
 
 /* ==========================================================================
@@ -91,12 +114,38 @@ ul {
     align-items: center;
 }
 
+@media (max-width: 1024px) {
+    .header__inner {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__inner {
+        padding: 0 5vw;
+    }
+}
+
 .header__logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.header__logo img {
+    height: 40px;
+    /* Adjusted height to balance with text */
+    width: auto;
+    display: block;
+}
+
+.header__logo-text {
     font-family: var(--font-serif);
-    font-size: 24px;
+    font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
     color: var(--color-primary);
+    white-space: nowrap;
 }
 
 .header__nav ul {
@@ -336,37 +385,191 @@ ul {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.cycle-placeholder {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+/* Cycle Grid Layout */
+.cycle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
     gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
 }
 
-.cycle-item {
+.cycle-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 20px;
     text-align: center;
-    width: 200px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
 }
 
-.cycle-num {
-    display: block;
-    font-size: 3rem;
-    color: var(--color-gold);
-    font-family: var(--font-serif);
-    opacity: 0.3;
-    line-height: 1;
+.cycle-card:hover {
+    transform: translateY(-5px);
 }
 
-.cycle-item h4 {
-    font-size: 1.2rem;
-    margin: 10px 0;
+.cycle-card h3 {
+    font-size: 1.4rem;
     color: var(--color-primary);
+    margin: 10px 0 5px;
+    font-family: var(--font-serif);
 }
 
-.cycle-arrow {
-    font-size: 2rem;
+.cycle-card p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.step-num {
+    display: block;
+    font-size: 0.8rem;
     color: var(--color-gold);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.step-icon {
+    font-size: 2rem;
+}
+
+/* Positioning */
+.step-1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Top: Make */
+.step-2 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/* Right: Prepare */
+.step-3 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* Bottom: Deliver */
+.step-4 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Left: Connect */
+
+/* Center Circle */
+.cycle-center {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    z-index: 1;
+    text-align: center;
+}
+
+.cycle-center-text {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.4;
+    font-size: 1.1rem;
+}
+
+/* Arrows (CSS Triangles/Lines) */
+.cycle-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    opacity: 0.5;
+}
+
+/* Simplified Arrows for now - can use SVG later */
+.arrow-1-2 {
+    /* Top to Right */
+    top: 25%;
+    right: 28%;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent var(--color-gold);
+    transform: rotate(45deg);
+}
+
+.arrow-2-3 {
+    /* Right to Bottom */
+    bottom: 25%;
+    right: 28%;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent var(--color-gold);
+    transform: rotate(135deg);
+}
+
+.arrow-3-4 {
+    /* Bottom to Left */
+    bottom: 25%;
+    left: 28%;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent var(--color-gold);
+    transform: rotate(225deg);
+}
+
+.arrow-4-1 {
+    /* Left to Top */
+    top: 25%;
+    left: 28%;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent var(--color-gold);
+    transform: rotate(315deg);
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .cycle-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .cycle-arrow {
+        display: none;
+    }
+
+    /* Hide complex arrows on mobile */
+    .cycle-center {
+        order: 5;
+        margin-top: 20px;
+    }
+
+    .cycle-card::after {
+        /* Simple down arrow for mobile */
+        content: "↓";
+        display: block;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        color: var(--color-gold);
+    }
+
+    .cycle-card:last-child::after {
+        display: none;
+    }
+
+    .step-4::after {
+        display: none;
+    }
 }
 
 /* ==========================================================================
@@ -574,6 +777,8 @@ ul {
     margin-bottom: 20px;
 }
 
+
+
 .footer__logo h2 {
     font-family: var(--font-serif);
     font-size: 1.5rem;
@@ -618,10 +823,128 @@ ul {
     margin: 40px 0 20px;
 }
 
-.legal-content p,
-.legal-content ul,
-.legal-content ol {
+.legal-content p {
     margin-bottom: 20px;
+}
+
+.legal-content ul {
+    list-style: disc;
+    padding-left: 1.5em;
+    margin-bottom: 20px;
+}
+
+.legal-content ol {
+    list-style: decimal;
+    padding-left: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Contact Styles
+   ========================================================================== */
+.contact-intro {
+    margin-bottom: 60px;
+}
+
+.contact-phone {
+    background: #fdfae5;
+    /* Light Gold background */
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    border: 2px solid var(--color-gold);
+}
+
+.contact-phone h3 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.phone-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    font-family: var(--font-base);
+    /* Ensure numbers are clean */
+}
+
+.phone-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.contact-form-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-form-wrapper h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.form-note {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.required {
+    background: #ff4444;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: text-bottom;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-gold);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.2);
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.form-submit .btn {
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
 }
 
 /* ==========================================================================
