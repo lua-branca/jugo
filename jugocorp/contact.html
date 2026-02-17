@@ -44,55 +44,60 @@
             <div class="container">
                 <div class="contact-intro text-center">
                     <p class="section__lead">
-                        事業に関するお問い合わせ、イベント参加のご相談など、<br>
-                        お気軽にお問い合わせください。
+                        事業に関するご相談、協業のご提案、取材のご依頼など、<br>
+                        どのようなことでもお気軽にお問い合わせください。<br>
+                        皆さまからのご連絡を心よりお待ちしております。
                     </p>
                 </div>
 
-                <!-- Phone Contact (For Urgent) -->
-                <div class="contact-phone text-center">
-                    <h3>お急ぎの方はお電話にて</h3>
-                    <p class="phone-number">000-0000-0000</p>
-                    <p class="phone-note">受付時間: 平日 9:00 - 18:00</p>
-                </div>
+                <div class="contact-grid">
+                    <!-- Web Form (Primary) -->
+                    <div class="contact-form-wrapper">
+                        <h3>お問い合わせフォーム</h3>
+                        <p class="form-note">必要事項をご記入の上、送信ボタンを押してください。<br>通常3営業日以内に担当者よりご連絡いたします。</p>
 
-                <!-- Web Form -->
-                <div class="contact-form-wrapper">
-                    <h3>お問い合わせフォーム</h3>
-                    <p class="form-note">以下のフォームにご記入の上、送信してください。<br>自動でGoogleスプレッドシートに保存されるよう設定（Googleフォーム連携）が可能です。</p>
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">お名前 <span class="required">必須</span></label>
+                                <input type="text" id="name" name="name" placeholder="例）十郷 太郎" required>
+                            </div>
 
-                    <!-- 
-                         IMPORTANT: To link this to a Google Sheet:
-                         1. Create a Google Form with the same fields (Name, Phone, Message).
-                         2. Get the "Get pre-filled link" URL to find the entry IDs (entry.123456).
-                         3. Set action="YOUR_GOOGLE_FORM_ACTION_URL" and names="entry.XXXX".
-                    -->
-                    <form action="#" method="POST" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">お名前 <span class="required">必須</span></label>
-                            <input type="text" id="name" name="name" placeholder="例）十郷 太郎" required>
+                            <div class="form-group">
+                                <label for="email">メールアドレス <span class="required">必須</span></label>
+                                <input type="email" id="email" name="email" placeholder="例）info@jugo-japan.jp" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">電話番号</label>
+                                <input type="tel" id="phone" name="phone" placeholder="例）090-1234-5678">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">件名</label>
+                                <input type="text" id="subject" name="subject" placeholder="例）イベントの協賛について">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+                                <textarea id="message" name="message" rows="8" placeholder="お問い合わせ内容をご記入ください"
+                                    required></textarea>
+                            </div>
+
+                            <div class="form-submit">
+                                <button type="submit" class="btn btn--primary">内容を確認して送信する</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Phone Contact (Secondary) -->
+                    <div class="contact-info-side">
+                        <div class="contact-phone">
+                            <h3>お電話でのお問い合わせ</h3>
+                            <p class="phone-desc">お急ぎの場合や、フォームが利用できない場合はお電話ください。</p>
+                            <p class="phone-number">0254-75-5977</p>
+                            <p class="phone-note">受付時間: 平日 9:00 - 18:00</p>
                         </div>
-
-                        <div class="form-group">
-                            <label for="phone">電話番号 <span class="required">必須</span></label>
-                            <input type="tel" id="phone" name="phone" placeholder="例）090-1234-5678" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">件名</label>
-                            <input type="text" id="subject" name="subject" placeholder="例）イベントについて">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
-                            <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください"
-                                required></textarea>
-                        </div>
-
-                        <div class="form-submit">
-                            <button type="submit" class="btn btn--primary">送信する</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
