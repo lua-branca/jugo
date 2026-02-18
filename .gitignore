@@ -11,3 +11,7 @@
 # Allow Web directories
 !jugocorp/
 !jugocorp/**
+
+# Allow Admin Dashboard
+!admin/
+!admin/**

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugo Project Status (Internal)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../jugocorp/css/style.css">
+    <style>
+        /* Specific styles for Status Dashboard */
+        .status-header {
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .status-header h1 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .status-meta {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .status-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .status-table th,
+        .status-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .status-table th {
+            background-color: #f4f5f7;
+            font-weight: 700;
+            color: var(--color-primary);
+            width: 20%;
+        }
+
+        .status-table td:nth-child(2) {
+            width: 15%;
+            font-weight: 700;
+        }
+
+        .status-table tr:last-child th,
+        .status-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .badge-ok {
+            background-color: #e6fcf5;
+            color: #0ca678;
+        }
+
+        .badge-progress {
+            background-color: #e7f5ff;
+            color: #1c7ed6;
+        }
+
+        .badge-warn {
+            background-color: #fff9db;
+            color: #f59f00;
+        }
+
+        .badge-error {
+            background-color: #fff5f5;
+            color: #fa5252;
+        }
+
+        .priority-list {
+            list-style: none;
+            counter-reset: priority-counter;
+        }
+
+        .priority-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+
+        .priority-list li::before {
+            counter-increment: priority-counter;
+            content: counter(priority-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--color-gold);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 700;
+            font-family: var(--font-serif);
+        }
+
+        .priority-title {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+
+            .status-table,
+            .status-table tbody,
+            .status-table tr,
+            .status-table td,
+            .status-table th {
+                display: block;
+                width: 100%;
+            }
+
+            .status-table tr {
+                margin-bottom: 20px;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                padding: 15px;
+            }
+
+            .status-table th {
+                display: none;
+                /* Hide headers on mobile */
+            }
+
+            .status-table td {
+                padding: 5px 0;
+                border: none;
+            }
+
+            .status-table td::before {
+                content: attr(data-label);
+                display: block;
+                font-size: 0.8rem;
+                color: #999;
+                margin-bottom: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="status-header">
+        <div class="container">
+            <h1>Jugo Project Status</h1>
+            <div class="status-meta">
+                <span style="display:inline-block; margin-right:20px;">最終更新: 2026/02/18</span>
+                <span>フェーズ: トライアル・在庫消化 / 0米ブランド立ち上げ準備</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Priority -->
+        <section class="section status-section bg-gray">
+            <div class="container">
+                <h2 class="section__title--sm text-center">コンテンツ制作・対応優先順位</h2>
+                <ol class="priority-list">
+                    <li>
+                        <span class="priority-title">【最優先】0米 (米缶) のネーミング・ラベル確定</span>
+                        これが全てのボトルネック（LP、製造、販売）。早急に決定し、契約→製造完了まで持っていく必要があります。
+                    </li>
+                    <li>
+                        <span class="priority-title">【高】キッチンカー・現地の撮影</span>
+                        Web/SNSの画作りにおいて「実体」が足りていないため、納車済み1台の撮影を行い、Webに反映させます。
+                    </li>
+                    <li>
+                        <span class="priority-title">【中】卒業祝いイベントの企画・取材準備</span>
+                        単なる寄付で終わらせず、「十郷の活動」としてコンテンツ化する準備（カメラマン手配など）を行います。
+                    </li>
+                    <li>
+                        <span class="priority-title">【定常】農地開拓の進捗発信</span>
+                        「来年の農地も集め中」という現在進行系の動きを、note/SNSでドキュメンタリーとして発信します。
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Inventory -->
+        <section class="section status-section">
+            <div class="container">
+                <h2 class="section__title--sm">1. 在庫・製品 (Inventory & Products)</h2>
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>リソース</th>
+                            <th>ステータス</th>
+                            <th>詳細・数量</th>
+                            <th>ネクストアクション / 課題</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="リソース">お米</td>
+                            <td data-label="ステータス"><span class="badge badge-ok">在庫あり</span></td>
+                            <td data-label="詳細">約40t @新潟倉庫<br><small>(内訳: 宮城県産3t, 新潟県産37t)</small></td>
+                            <td data-label="アクション"><strong>消化優先</strong>。<br>「0米」としての製品化、またはイベント/給食での活用で消費サイクルを回す必要あり。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="リソース">米缶 (0米)</td>
+                            <td data-label="ステータス"><span class="badge badge-progress">製作中 (80%)</span></td>
+                            <td data-label="詳細">名古屋の工場と連携中。<br>中身（米）は確定済み。</td>
+                            <td data-label="アクション"><span
+                                    class="badge badge-error">Blocker</span><br><strong>ラベルデザイン・製品名の最終決定</strong>。契約書締結待ち。<br>→
+                                これが決まらないとLP公開・販売開始ができない。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Assets -->
+        <section class="section status-section">
+            <div class="container">
+                <h2 class="section__title--sm">2. 物理資産・生産基盤 (Assets)</h2>
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>リソース</th>
+                            <th>ステータス</th>
+                            <th>詳細</th>
+                            <th>コンテンツ制作への影響</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="リソース">農地</td>
+                            <td data-label="ステータス"><span class="badge badge-ok">拡大確定 (4月〜)</span></td>
+                            <td data-label="詳細">新潟に1.5町部 (約1.5ha)
+                                確定。<br><small>※追加で3町部(3ha)になる可能性あり。<br>※来年度分も紹介で収集中。</small></td>
+                            <td data-label="アクション"><strong>「作る
+                                    (Make)」のストーリー開始</strong>。<br>4月からの田植え・準備風景の撮影スケジュール確保。「空き家再生」文脈との連動も検討。</td>
+                        </tr>
+                        <tr>
+                            <td data-label="リソース">キッチンカー</td>
+                            <td data-label="ステータス"><span class="badge badge-progress">納車・準備中</span></td>
+                            <td data-label="詳細">計2台購入済み。<br>1台: 納車済み<br>1台: 2月末納車予定</td>
+                            <td data-label="アクション"><strong>【High Priority】実写撮影</strong>。<br>「届ける
+                                (Deliver)」の象徴として、納車済みの車体を使った撮影・Webへの掲載を急ぐ。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Events -->
+        <section class="section status-section">
+            <div class="container">
+                <h2 class="section__title--sm">3. イベント・企画 (Events)</h2>
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>時期</th>
+                            <th>イベント名</th>
+                            <th>詳細</th>
+                            <th>必要なクリエイティブ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="時期">2026.03</td>
+                            <td data-label="イベント名">卒業祝い (弥生小)</td>
+                            <td data-label="詳細">今年度卒業生へのお祝い。<br>食材提供 or 記念品プレゼントを検討中。</td>
+                            <td data-label="アクション">
+                                <strong>記録撮影・レポート</strong>。<br>地域貢献実績として発信。「米缶」が間に合えば記念品として最適だがスケジュール要注意。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="時期">2026.04</td>
+                            <td data-label="イベント名">ラベルコンテスト発表</td>
+                            <td data-label="詳細"><span class="badge badge-warn">検討中</span><br>単体開催は見送り、クラファン企画に統合検討中。
+                            </td>
+                            <td data-label="アクション">クラファン全体の設計とセットで再計画。</td>
+                        </tr>
+                        <tr>
+                            <td data-label="時期">2026.05</td>
+                            <td data-label="イベント名">0米 販売開始</td>
+                            <td data-label="詳細">一般販売開始目標</td>
+                            <td data-label="アクション">LP公開、SNS広告開始。</td>
+                        </tr>
+                        <tr>
+                            <td data-label="時期">2026.Summer</td>
+                            <td data-label="イベント名">夏祭り出店</td>
+                            <td data-label="詳細">キッチンカーでの出店検討</td>
+                            <td data-label="アクション">出店告知、メニュー表、のぼり、看板などのリアル販促物。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Crowdfunding -->
+        <section class="section status-section">
+            <div class="container">
+                <h2 class="section__title--sm">4. 資金調達・未来投資 (Crowdfunding)</h2>
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>目的</th>
+                            <th>ステータス</th>
+                            <th>詳細</th>
+                            <th>ネクストアクション</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="目的">自社工場</td>
+                            <td data-label="ステータス"><span class="badge badge-warn">計画中</span></td>
+                            <td data-label="詳細">名古屋の委託工場から、将来的な自社生産へ。</td>
+                            <td data-label="アクション"><strong>スケジュール逆算中</strong>。<br>クラファン実施時期の決定待ち。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8rem;">
+        <p>Jugo Project Internal Dashboard (Confidentials)</p>
+    </footer>
+
+</body>
+
+</html>
