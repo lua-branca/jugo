@@ -72,7 +72,11 @@ ul {
 }
 
 .bg-gray {
-    background-color: var(--color-gray);
+    background-color: #f5f5f5;
+}
+
+.bg-gray-dark {
+    background-color: #e8e8e8;
 }
 
 .section {
@@ -134,7 +138,7 @@ ul {
 }
 
 .header__logo img {
-    height: 40px;
+    height: 60px;
     /* Adjusted height to balance with text */
     width: auto;
     display: block;
@@ -142,7 +146,7 @@ ul {
 
 .header__logo-text {
     font-family: var(--font-serif);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--color-primary);
     white-space: nowrap;
@@ -601,19 +605,50 @@ ul {
 
 .achievement__item {
     display: flex;
-    border-bottom: 1px solid #eee;
-    padding: 20px 0;
+    align-items: baseline;
+    gap: 5px;
+    /* Visual 3px with date width buffer */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 25px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.3s ease;
+}
+
+.achievement__item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
 }
 
 .achievement__date {
-    width: 120px;
+    width: 115px;
+    /* Tighter fit */
+    flex-shrink: 0;
+    font-family: var(--font-base);
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-gold);
+    line-height: 1;
+}
+
+.achievement__content {
+    flex: 1;
 }
 
 .achievement__content h4 {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     color: var(--color-primary);
+    font-family: var(--font-base);
+    /* Ensure clean Sans-serif for readability if mostly text */
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.achievement__content p {
+    font-size: 0.9rem;
+    /* One size smaller */
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
 }
 
 /* ==========================================================================
@@ -634,7 +669,7 @@ ul {
 
 .news-list li {
     padding: 15px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -698,6 +733,12 @@ ul {
     color: #fff;
     transform: translateY(-3px);
     border-color: var(--color-primary);
+}
+
+a.sns-icon:not([href]) {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
 }
 
 /* LINE Button (Standalone) */
@@ -1334,5 +1375,284 @@ ul {
 
     .contact-info-side {
         margin-top: 20px;
+    }
+}
+
+/* ==========================================================================
+   Top Page Products Section
+   ========================================================================== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card__image img {
+    transform: scale(1.05);
+}
+
+.product-card__content {
+    text-align: left;
+}
+
+.product-card__content h4 {
+    font-size: 1.4rem;
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+.product-card__content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.arrow-link {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.arrow-link::after {
+    content: "→";
+    font-family: sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .arrow-link::after {
+    transform: translateX(5px);
+}
+
+/* Mobile for Products */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+/* ==========================================================================
+   Business Page Renovation (Magazine Style)
+   ========================================================================== */
+.business-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* Zigzag Layout: Reverse even sections */
+.business-section:nth-of-type(even) .business-container {
+    flex-direction: row-reverse;
+}
+
+/* Visual Area */
+.business-visual {
+    flex: 1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 4 / 3;
+}
+
+.business-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.business-visual:hover img {
+    transform: scale(1.05);
+}
+
+/* Content Area */
+.business-content {
+    flex: 1;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Large Numbering */
+.business-num {
+    display: block;
+    font-size: 10rem;
+    font-weight: 700;
+    color: rgba(200, 170, 80, 0.5);
+    /* Darker gold, more visible */
+    line-height: 0.8;
+    position: absolute;
+    top: -70px;
+    left: -30px;
+    z-index: 0;
+    /* Changed from -1 to 0 to be visible */
+    font-family: var(--font-serif);
+    letter-spacing: -0.05em;
+    pointer-events: none;
+    /* Prevent interference */
+}
+
+.business-title-jp {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+    display: block;
+}
+
+.business-title-en {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-gold);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.business-lead {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: var(--color-primary);
+    border-left: 5px solid var(--color-gold);
+    padding-left: 20px;
+}
+
+.business-desc {
+    font-size: 1rem;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* List Features */
+.business-features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.business-features li {
+    background-color: #f7f9fb;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Ecosystem Icons Enhancement */
+.step-icon {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 10px 25px rgba(207, 186, 113, 0.3);
+    /* Gold shadow */
+    border: 2px solid var(--color-gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cycle-card:hover .step-icon {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(207, 186, 113, 0.5);
+    background: #fff;
+}
+
+.step-num {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .business-container {
+        flex-direction: column !important;
+        /* Force column on mobile */
+        gap: 100px;
+    }
+
+    .business-visual {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .business-content {
+        width: 100%;
+        padding: 0 10px;
+        margin-top: 40px;
+    }
+
+    .business-num {
+        font-size: 6rem;
+        top: -40px;
+        left: 0;
+    }
+
+    .business-lead {
+        font-size: 1.3rem;
     }
 }
