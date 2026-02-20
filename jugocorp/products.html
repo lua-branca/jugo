@@ -11,6 +11,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap"
         rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-525209061"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-525209061');
+    </script>
 </head>
 
 <body>
@@ -26,7 +35,7 @@
             <nav class="header__nav">
                 <ul>
                     <li><a href="business.html">Business</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
                     <li><a href="company.html">Company</a></li>
                     <li><a href="contact.html" class="btn btn--nav">Contact</a></li>
                 </ul>
@@ -50,17 +59,22 @@
                     <p class="section__lead" style="font-family: var(--font-serif); font-weight: 700;">
                         失われゆく風景を、希望の原点へ。
                     </p>
-                    <p class="mission__text text-left" style="margin-top: 40px;">
-                        農家人口の減少と高齢化により、日本全国で「耕作放棄地」が増加し続けています。<br>
-                        ある試算では、10年後には数万ヘクタールもの農地が失われるとも言われています。<br>
-                        <br>
-                        私たち十郷は、この問題に正面から向き合います。<br>
-                        耕作の継続が困難となった土地を引き継ぎ、荒れてしまった農地を再び黄金色の田んぼへと再生させる。<br>
-                        さらに、各農地の収益構造を改善し、新たな担い手を確保することで、持続可能な農業の仕組みを構築します。<br>
-                        <br>
-                        十郷の農業再生プロジェクト。<br>
-                        それは単なる「農作業」ではなく、<strong>「未来の日本のおいしいお米を守るプロジェクト」</strong>です。
-                    </p>
+                    <div class="concept-body text-left">
+                        <p class="concept-text">
+                            農家人口の減少と高齢化により、日本全国で「耕作放棄地」が増加し続けています。<br>
+                            ある試算では、10年後には数万ヘクタールもの農地が失われるとも言われています。
+                        </p>
+                        <p class="concept-text">
+                            私たち十郷は、この問題に正面から向き合います。<br>
+                            耕作の継続が困難となった土地を引き継ぎ、荒れてしまった農地を再び<strong>黄金色の田んぼへと再生させる。</strong><br>
+                            さらに、各農地の収益構造を改善し、新たな担い手を確保することで、持続可能な農業の仕組みを構築します。
+                        </p>
+                        <div class="concept-highlight">
+                            <p>十郷の農業再生プロジェクト。<br>
+                                それは単なる「農作業」ではなく、</p>
+                            <p class="concept-strong">「未来の日本のおいしいお米を守るプロジェクト」です。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -181,6 +195,10 @@
                 <div class="footer__logo">
                     <h2>一般社団法人 十郷</h2>
                     <p>〒959-3252 新潟県岩船郡関川村大字高田81-2</p>
+                    <div class="footer__contact">
+                        <a href="tel:0254-75-5977" class="footer__tel">TEL: 0254-75-5977</a>
+                        <span class="footer__time">受付時間 10:00〜19:00（土日祝休）</span>
+                    </div>
                 </div>
                 <div class="footer__nav">
                     <ul>
