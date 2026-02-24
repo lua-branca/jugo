@@ -2,7 +2,7 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // Configuration
-$ADMIN_EMAIL = 'contact@jugo-japan.jp';
+$ADMIN_EMAIL = 'contact@jugo-japan.jp, fukuda.misako@gmail.com'; // TODO: テスト完了後にfukuda.misako@gmail.comを削除する
 $SENDER_EMAIL = 'contact@jugo-japan.jp';
 $SENDER_NAME = '一般社団法人 十郷';
 
