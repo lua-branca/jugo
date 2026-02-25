@@ -3,6 +3,8 @@
 
 # Allow git system files
 !.gitignore
+!.github/
+!.github/**
 
 # Allow Design/Code directories
 !LP_Mockup/
