@@ -22,7 +22,7 @@ jobs:
           # Jugoリポジトリ内の jugocorp/ フォルダ内のみをアップロードする
           local-dir: ./jugocorp/
           # Xserverの初期ドメイン（テスト環境）へのアップロードパス
-          server-dir: ./xs033143.xsrv.jp/public_html/
+          server-dir: ./xs033143.xsrv.jp/public_html/jugocorp/
           exclude: |
             **/.git*
             **/.git*/**
