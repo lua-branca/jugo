@@ -21,8 +21,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           # Jugoリポジトリ内の jugocorp/ フォルダ内のみをアップロードする
           local-dir: ./jugocorp/
-          # Xserverの初期ドメイン（テスト環境）へのアップロードパス（ルート階層に直接直置き）
-          server-dir: /xs033143.xsrv.jp/public_html/
+          # Xserverの初期ドメイン（テスト環境）へのアップロードパス（ドットが必要です！）
+          server-dir: ./xs033143.xsrv.jp/public_html/
           exclude: |
             **/.git*
             **/.git*/**
