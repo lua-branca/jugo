@@ -19,10 +19,10 @@ jobs:
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
-          # Jugoリポジトリ内の jugocorp/ フォルダ内のみをアップロードする
+          # ▼ここは「GitHub上でのファイルの場所」なので ./ が付くのが正解です
           local-dir: ./jugocorp/
-          # Xserverの初期ドメイン（テスト環境）へのアップロードパス
-          server-dir: ./xs033143.xsrv.jp/public_html/jugocorp/
+          # ▼ここが修正した一番の肝です！ ./ を取り、絶対パス（ / ）始まりにしました
+          server-dir: /xs033143.xsrv.jp/public_html/jugocorp/
           exclude: |
             **/.git*
             **/.git*/**
